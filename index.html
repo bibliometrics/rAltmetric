@@ -73,12 +73,12 @@
  <h2>Installing rAltmetric</h2>
   First install the devtools package.
 
-  <pre><code lang="R">
-  install.packages('devtools')
+  <pre><code lang="R">install.packages('devtools')
   </code></pre>
   
-  <pre><code lang="r">
-  library(devtools)
+  then install the package directly from GitHub.
+
+  <pre><code lang="r">library(devtools)
   install_github('rAltmetric', 'ropensci')
   </code></pre>
 
@@ -104,6 +104,8 @@ with doi 10.1038/489201a (altmetric_id: 942310) published in Nature.
 4   Tweets   157
 5 Accounts   167
 </code></pre>  
+
+The <code>print</code> method shows only the citations but the actual list contains the full suite of metrics data. See <code>names(acuna)</code> for a complete list.
   </section>
 
   <br><br><br>
