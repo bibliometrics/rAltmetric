@@ -84,8 +84,7 @@ install_github('rAltmetric', 'ropensci')</code></pre>
   
 There was a recent paper by <a href="http://www.nature.com/news/2010/100616/full/465860a.html">Acuna et al</a> that received a lot of attention on Twitter. What was the impact of that paper?
 
-  <pre><code lang="r">
-library(rAltmetric)
+  <pre><code lang="r">library(rAltmetric)
 acuna <- altmetrics('10.1038/489201a')
 > acuna
 Altmetrics on: "Future impact: Predicting scientific success" 
@@ -156,8 +155,7 @@ write.csv(acuna_data, file = 'acuna_altmetrics.csv')
      <h2>Workflow</h2>
 For a real world use-case, one might want to get metrics on multiple publications. If so, just read them from a spreadsheet and <code>llply</code> through them like the example below.
 
-<pre><code lang="r">
-# Be sure to update the path to the supplied example csv file
+<pre><code lang="r"># Be sure to update the path to the supplied example csv file
 doi_data <- read.csv('dois.csv', header = TRUE)
 
 > doi_data
@@ -183,7 +181,7 @@ write.csv(metric_data, file = "metric_data.csv")
     <section id="viz">
 
  <h2>Vizualization</h2>
-  For any <code>altmetric</code> object you can quickly plot the stats with a generic <code>plot</code> function. The plot overlays the <a href="http://api.altmetric.com/embeds.html"> altmetric badge and the score</a> on the top right corner. If you prefer a customized plot, create your own with the raw data generated from <code>almetric_data()</code>
+  For any <code>altmetric</code> object you can quickly plot the stats with a generic <code>plot</code> function. The plot overlays the <a href="http://api.altmetric.com/embeds.html"> altmetric badge and the score</a> on the top right corner. If you prefer a customized plot, create your own with the raw data generated from <code>almetric_data()</code><br>
   <img src="acuna.png" class="img-polaroid">
   </section>
 
