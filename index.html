@@ -181,6 +181,8 @@ doi_data <- read.csv('dois.csv', header = TRUE)
 3 10.1016/j.tree.2011.01.009
 4             10.1086/664183
 
+# First we should add the identifier to the list
+doi_list <- paste0("doi","/", doi_data$doi)
 
 library(plyr)
 # First, let's retrieve the metrics.
