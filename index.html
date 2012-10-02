@@ -90,7 +90,7 @@ install_github('rAltmetric', 'ropensci')</code></pre>
 There was a recent paper by <a href="http://www.nature.com/news/2010/100616/full/465860a.html">Acuna et al</a> that received a lot of attention on Twitter. What was the impact of that paper?
 
   <pre><code lang="r">library(rAltmetric)
-acuna <- altmetrics('10.1038/489201a')
+acuna <- altmetrics(doi ='10.1038/489201a')
 > acuna
 Altmetrics on: "Future impact: Predicting scientific success" 
 with doi 10.1038/489201a (altmetric_id: 942310) published in Nature.
@@ -101,6 +101,17 @@ with doi 10.1038/489201a (altmetric_id: 942310) published in Nature.
 4   Tweets   157
 5 Accounts   167
 </code></pre>  
+
+You can provide identifiers in multiple ways. You can either add it to the identifier directly or supply it as a list. Here are a few examples:
+
+<pre><code lang="r">altmetrics('arXiv:1106.2748')
+altmetrics('id/128838')
+altmetrics(id='128838')  
+altmetrics(pmid='21460563')
+altmetrics('pmid/21460563')
+altmetrics(arXiv ='arXiv:1106.2748')
+</code></pre>
+<br>
 
 The <code>print</code> method shows only the citations but the actual list contains the full suite of nested metrics data. See <code>names(acuna)</code> for a complete list.
   </section>
