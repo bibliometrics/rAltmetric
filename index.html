@@ -19,9 +19,9 @@
 
   <div class="span11 offset1">
   <div class="row">
-  <br><br>  
+  <br><br>
    <img src="https://raw.github.com/ropensci/rAltmetric/master/altmetric_logo_title.png"><h1>rAltmetric, v0.03</h1>
-  </div> 
+  </div>
 
   <div class"row"><a href="http://altmetric.com/">Altmetric</a> provides metrics on publications. Their API is free to use for non-commercial use and this package includes an API key. If you need your own, request one at support at altmetric dot com.
 
@@ -33,24 +33,25 @@
   <hr class="soften">
   </div>
 
-  <div class="row"> 
- <div class="span3"> 
+  <div class="row">
+ <div class="span3">
         <div class="span3 bs-docs-sidebar">
         <ul class="nav nav-list bs-docs-sidenav">
           <li><a href="#about"><i class="icon-chevron-right"></i> About</a></li>
           <li><a href="#installation"><i class="icon-chevron-right"></i> Installation</a></li>
           <li><a href="#metrics"><i class="icon-chevron-right"></i> Retrieving metrics</a></li>
-          <li><a href="#download_metrics"><i class="icon-chevron-right"></i> Extracting metrics</a></li>      
+          <li><a href="#download_metrics"><i class="icon-chevron-right"></i> Extracting metrics</a></li>
           <li><a href="#workflow"><i class="icon-chevron-right"></i> Processing multiple objects</a></li>
           <li><a href="#viz"><i class="icon-chevron-right"></i> Visualization</a></li>
+          <li><a href="#use-cases"><i class="icon-chevron-right"></i> Use-cases</a></li>
           <li><a href="#support"><i class="icon-chevron-right"></i> Support and Bugs</a></li>
           <li><a href="#license"><i class="icon-chevron-right"></i> License</a></li>
 
      </ul>
       </div>
  </div>
- 
- <div class="span8"> 
+
+ <div class="span8">
   <section id="about">
 
  <h2>About the package</h2>
@@ -61,9 +62,9 @@
 <li><a href="http://www.nature.com/news/2010/100616/full/465860a.html">Metrics: Do metrics matter?</a></li>
 <li><a href="http://altmetrics.org/manifesto/">The altmetrics manifesto</a></li>
 </ul>
-  
-  
-  
+
+
+
   </section>
 
   <br><br><br>
@@ -88,13 +89,13 @@ install_github('rAltmetric', 'ropensci')</code></pre>
 
     <section id="metrics">
    <h2>Retrieving metrics</h2>
-  
+
 There was a recent paper by <a href="http://www.nature.com/news/2010/100616/full/465860a.html">Acuna et al</a> that received a lot of attention on Twitter. What was the impact of that paper?
 
   <pre><code lang="r">library(rAltmetric)
 acuna <- altmetrics(doi ='10.1038/489201a')
 > acuna
-Altmetrics on: "Future impact: Predicting scientific success" 
+Altmetrics on: "Future impact: Predicting scientific success"
 with doi 10.1038/489201a (altmetric_id: 942310) published in Nature.
   provider count
 1    Feeds     9
@@ -102,13 +103,13 @@ with doi 10.1038/489201a (altmetric_id: 942310) published in Nature.
 3    Cited   174
 4   Tweets   157
 5 Accounts   167
-</code></pre>  
+</code></pre>
 
 You can provide identifiers in multiple ways. You can either add it to the identifier directly or supply it as a list. Here are a few examples:
 
 <pre><code lang="r">altmetrics('arXiv:1106.2748')
 altmetrics('id/128838')
-altmetrics(id='128838')  
+altmetrics(id='128838')
 altmetrics(pmid='21460563')
 altmetrics('pmid/21460563')
 altmetrics(arXiv ='arXiv:1106.2748')
@@ -156,14 +157,14 @@ The <code>print</code> method shows only the citation counts but the actual list
   pct_similar_age_journal_1m pct_similar_age_journal_3m
 1                      90.35                      91.50
                                               details_url
-1 http://www.altmetric.com/details.php?citation_id=942310  
-  </code></pre> 
+1 http://www.altmetric.com/details.php?citation_id=942310
+  </code></pre>
 
   These data can easily be written to disk as follows:
 
   <pre><code lang="R">acuna_data <- altmetric_data(acuna)
 write.csv(acuna_data, file = 'acuna_altmetrics.csv')
-</code></pre> 
+</code></pre>
   </section>
 
   <br><br><br>
@@ -206,6 +207,11 @@ write.csv(metric_data, file = "metric_data.csv")
   </section>
 
   <br><br><br>
+<section id="use-cases">
+Need ideas for use-cases? See this fantastic <a href="http://jecologyblog.wordpress.com/2013/01/17/uptake-of-journal-of-ecology-papers-in-2012-a-comparison-of-metrics/">post</a> by the editorial board of the Journal of Ecology.
+</section>
+
+
 
     <section id="support">
 
@@ -221,14 +227,14 @@ write.csv(metric_data, file = "metric_data.csv")
       <section id="license">
  <h2>License</h2>
  <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
-  
+
   </section>
   <br><br><br>
   </div>
   </div>
 
-  </div>  
-    
+  </div>
+
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
